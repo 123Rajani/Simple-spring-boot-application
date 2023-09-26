@@ -12,12 +12,12 @@ public class StudentController {
     @Autowired
     private StudentService service;
 
-    @PostMapping("/addStudent")
+    @PostMapping("/Student")
     public Student addStudent(@RequestBody Student student){
         return service.saveStudent(student);
     }
 
-    @PostMapping("/addStudents")
+    @PostMapping("/Students")
     public List<Student> addStudents(@RequestBody List<Student> students){
         return service.saveStudents(students);
     }
