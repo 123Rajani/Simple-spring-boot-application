@@ -41,3 +41,4 @@ public class SwaggerConfig implements WebMvcConfigurer{
     }
 
 }
+//http://localhost:9091/swagger-ui/index.html
