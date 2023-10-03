@@ -2,8 +2,10 @@ package com.example.Studentdatamanagement.service;
 
 import com.example.Studentdatamanagement.Repo.StudentRepository;
 import com.example.Studentdatamanagement.entity.Student;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
@@ -11,6 +13,12 @@ import java.util.List;
 public class StudentService {
     @Autowired
     private StudentRepository repository;
+
+    @Autowired
+    private ModelMapper mapper;
+
+    @Autowired
+    private WebClient webClient;
 
     public Student saveStudent(Student student){
       return repository.save(student);
@@ -23,15 +31,18 @@ public class StudentService {
         return repository.findAll();
     }
 
-    public Student getStudentById(int id){
+    public Student getStudentById(Long id){
         return repository.findById(id).orElse(null);
     }
+
+
+
 
     public Student getStudentByName(String name){
         return repository.findByName(name);
     }
 
-    public String deleteStudent(int id){
+    public String deleteStudent(Long id){
         repository.deleteById(id);
         return "Student removed: " +id;
     }

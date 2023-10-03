@@ -1,9 +1,6 @@
 package com.example.Studentdatamanagement.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,15 +9,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "student")
 public class Student {
 
     @Id
-    @GeneratedValue
-    int id;
-    String name;
-    int age;
-    String address;
-    String contactNo;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String name;
+    private int age;
+    private String address;
+    private String  contactNo;
 
 }
