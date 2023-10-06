@@ -4,12 +4,12 @@ import lombok.Data;
 
 @Data
 public class StudentResponse {
-    int id;
-    String name;
-    int age;
-    String address;
-    String contactNo;
-    private AddressResponse addressResponse;
+    private int id;
+    private String name;
+    private int age;
+    private String address;
+    private String contactNo;
 
-
+    public void setAddressResponse(AddressResponse addressResponse) {
+    }
 }
