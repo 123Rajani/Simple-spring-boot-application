@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 @RestController
+//@CrossOrigin("http://localhost:4200/")
 public class StudentController {
     @Autowired
     private StudentService service;
@@ -62,10 +63,10 @@ public class StudentController {
 //        return ResponseEntity.status(HttpStatus.OK).body(student);
     }
 
-    @PutMapping("/updateStudent")
-    public ResponseEntity<?> updateStudent(@RequestBody Student student) {
+    @PutMapping("/updateStudentById/{id}")
+    public ResponseEntity<?> updateStudent(@PathVariable int id, @RequestBody Student student) {
         try {
-            Student updatedStudent = service.UpdateStudent(student);
+            Student updatedStudent = service.UpdateStudent(id,student);
             if (updatedStudent != null) {
                 return new ResponseEntity<>(updatedStudent, HttpStatus.OK);
             } else {

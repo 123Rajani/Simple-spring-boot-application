@@ -57,8 +57,8 @@ public class StudentService {
         repository.deleteById(id);
     }
 
-    public Student UpdateStudent(Student student){
-         Student exsistingStudent = repository.findById(student.getId()).orElse(null);
+    public Student UpdateStudent(int id, Student student){
+         Student exsistingStudent = repository.findById(id).orElse(null);
          exsistingStudent.setName(student.getName());
          exsistingStudent.setAge(student.getAge());
          exsistingStudent.setContactNo(student.getContactNo());
