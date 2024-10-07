@@ -1,0 +1,1 @@
+This is a Simple Student Management System built using Spring Boot MVC Architecture that performs basic CRUD (Create, Read, Update, Delete) operations. It allows users to manage student records, including adding new students, updating existing records, and deleting students from the system.
